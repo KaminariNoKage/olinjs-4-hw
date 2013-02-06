@@ -1,0 +1,15 @@
+extends layout
+
+block content
+	script(src='http://code.jquery.com/jquery.js')
+	script(src='/javascripts/twitscript.js')
+	script(src='/javascripts/update.js')
+	h1 Twit Heaven
+	p Welcome to Twitting
+	| Compose a Twit
+	br
+	textarea(id="newtweet", name="newtweet")
+	br
+	input(type="button", name="submit", id="submit", value="Send Twit")
+
+	include _twits

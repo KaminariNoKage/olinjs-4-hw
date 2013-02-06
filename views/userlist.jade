@@ -1,0 +1,8 @@
+extends layout
+
+block content
+	h1 List of All Users
+	div
+	each user, i in userlist
+		div(value=user) 
+			| #{user.name}
