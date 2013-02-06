@@ -4,12 +4,15 @@ block content
 	script(src='http://code.jquery.com/jquery.js')
 	script(src='/javascripts/twitscript.js')
 	script(src='/javascripts/update.js')
-	h1 Twit Heaven
-	p Welcome to Twitting
-	| Compose a Twit
-	br
-	textarea(id="newtweet", name="newtweet")
-	br
-	input(type="button", name="submit", id="submit", value="Send Twit")
+	h1 Twitty Twitter
+	div(id="compose", class=logged)
+		div(id="logdisplay")
+			h3 You are not logged in!
+			input(type="button", name="login", id="login", value="Log In Now")
+		div(id="twitdisplay")
+			h2 Compose a Twit
+			textarea(id="newtweet", name="newtweet")
+			br
+			input(type="button", name="submit", id="submit", value="Send Twit")
 
 	include _twits

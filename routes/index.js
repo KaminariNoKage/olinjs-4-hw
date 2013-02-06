@@ -9,6 +9,12 @@ var Mods = require('../models/twit_model.js')
 
 exports.index = function(req, res){
   Tweet.find().sort('-time').exec(function(err, foundTwits) {
-    res.render('index', {title: 'Tweets', twits: foundTwits});
+		if (req.session.user == null){
+			res.render('index', {title: 'Tweets', logged: 'false', twits: foundTwits});
+		}
+		else{
+			console.log("Here");
+			res.render('index', {title: 'Tweets', logged: 'true', twits: foundTwits});
+		};
   });
 };

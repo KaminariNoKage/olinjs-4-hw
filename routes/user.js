@@ -4,7 +4,8 @@
  */
  var Mods = require('../models/twit_model.js')
 	, User = Mods[0]
-	, Tweet = Mods[1];
+	, Tweet = Mods[1]
+	, logged = false;
 
 exports.list = function(req, res){
 	var userlist = User.find({}).sort('name').exec(function (err, docs) {
@@ -18,6 +19,10 @@ exports.list = function(req, res){
 //User LOGIN Page
 exports.inputuser = function(req, res){
 	res.render('login', {title: 'Login'});
+};
+
+exports.tologin = function(req, res){
+	res.redirect('/users/new');
 };
 
 exports.login = function(req, res){
